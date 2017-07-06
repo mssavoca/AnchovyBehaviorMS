@@ -13,6 +13,7 @@ library(nlme)
 library(predictmeans)
 library(pbkrtest)
 library(rethinking)
+library(gridExtra)
 
 ################ 
 ## Read in screenshots and process
@@ -582,7 +583,7 @@ times <- seq(-60, 90, by = 30)
     geom_vline(xintercept = 0, linetype="dashed") +
     ylim(0, 1) +
     labs(x = "Time (sec.) relative to treatment presentation",
-         y = "Proportion of fish rheotactic") +
+         y = "Proportion of Fish Rheotactic") +
     scale_x_continuous(breaks = times) +
     scale_color_manual(name = "Treatment", values = c("goldenrod2", "seagreen3", "darksalmon")) +
     theme_bw() +
@@ -609,7 +610,7 @@ times <- seq(-60, 90, by = 30)
     ylim(0, 1) +
     scale_x_continuous(breaks = times) +
     labs(x = NULL,
-         y = "Proportion of fish rheotactic") +
+         y = "Proportion of Fish Rheotactic") +
     scale_color_manual(name = "Treatment", values = c("darkcyan", "coral4")) +
     theme_bw() +
     theme(plot.title = element_text(face="bold",vjust=30, size = 18),
