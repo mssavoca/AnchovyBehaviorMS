@@ -1,0 +1,13 @@
+df <- cbind(c(2010,2011,2012,2013,2014,2015), 
+            c(1026,2601,2488,6019,10512,17286))
+colnames(df) <- c("Year", "Total_Catch")
+
+df <- as_data_frame(df)
+
+df$Year <- as.factor(df$Year)
+
+p <- ggplot(data = df, aes(x = Year, y = Total_Catch)) + 
+  geom_bar(stat = "identity", fill= "brown3") +   theme_bw() + guides(size=FALSE, color=FALSE) +
+  labs(title = "Anchovy landings by year", x = "Year", y = "Total catch (tonnes)") + 
+  theme(plot.title = element_text(hjust = 0.5), text = element_text(size=16))
+p
